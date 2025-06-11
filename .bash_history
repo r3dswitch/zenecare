@@ -54,3 +54,5 @@ python main.py
 python main.py
 python main.py
 git init
+git add .
+git commit -m "initital setup segmentation"
