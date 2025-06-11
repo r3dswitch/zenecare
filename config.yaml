@@ -1,0 +1,24 @@
+paths:
+  input_path: "/teamspace/studios/this_studio/data/images/0011.png"
+  imput_directory: "/teamspace/studios/this_studio/data/images/"
+  train_directory: "/teamspace/studios/this_studio/data/images/"
+  test_directory: "/teamspace/studios/this_studio/data/images/"
+  validate_directory: "/teamspace/studios/this_studio/data/images/"
+  output_directory: "/teamspace/studios/this_studio/results"
+  output_path: "out.png" 
+
+bbox_detection:
+  model_name: "Owl ViT 2"
+  processor: "google/owlv2-base-patch16-ensemble"
+  model: "google/owlv2-base-patch16-ensemble"
+
+segmentation:
+  model_name: "Sam 2"
+  processor: "facebook/sam-vit-base"
+  model: "facebook/sam-vit-base"
+
+device: "cpu"
+
+prompts: ["Find The Wound in the Image"]
+
+threshold: 0.2

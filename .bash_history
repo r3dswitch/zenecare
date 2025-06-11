@@ -56,3 +56,66 @@ python main.py
 git init
 git add .
 git commit -m "initital setup segmentation"
+git add .
+git commit -m "initital setup segmentation"
+git remote add origin https://github.com/r3dswitch/zenecare.git
+git push
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
