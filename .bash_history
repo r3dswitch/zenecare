@@ -250,3 +250,5 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "Added WandB and Dir Based Operation"
