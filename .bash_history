@@ -226,3 +226,27 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "refactor config"
+git push
+python main.py
+uv pip install wandb
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py

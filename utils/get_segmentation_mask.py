@@ -14,6 +14,7 @@ def get_segmentation_mask_sam(config: dict, image: np.ndarray, bbox: Tuple[int, 
     Output: 
         Mask: Numpy Array
     """
+    print("------------------Getting Segmentation Map-----------------------")
     image = Image.fromarray(np.uint8(image))
     device = config['envs']['device']
     processor, model = get_hf_model(config, "segmentation")

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/main.py", line 12, in <module>
+    area = segment_wound_area(config)
+  File "/teamspace/studios/this_studio/tasks/segment_wound_area.py", line 38, in segment_wound_area
+    "comparision": wandb.Image(compare_vis(config, gt, mask), caption="Comparision"),
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/wandb/sdk/data_types/image.py", line 266, in __init__
+    self._initialize_from_data(data_or_path, mode, file_type, normalize)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/wandb/sdk/data_types/image.py", line 423, in _initialize_from_data
+    if data.ndim > 2:  # type: ignore [union-attr]
+AttributeError: 'NoneType' object has no attribute 'ndim'
+Traceback (most recent call last):
+  File "/teamspace/studios/this_studio/main.py", line 12, in <module>
+    area = segment_wound_area(config)
+  File "/teamspace/studios/this_studio/tasks/segment_wound_area.py", line 38, in segment_wound_area
+    "comparision": wandb.Image(compare_vis(config, gt, mask), caption="Comparision"),
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/wandb/sdk/data_types/image.py", line 266, in __init__
+    self._initialize_from_data(data_or_path, mode, file_type, normalize)
+  File "/home/zeus/miniconda3/envs/cloudspace/lib/python3.10/site-packages/wandb/sdk/data_types/image.py", line 423, in _initialize_from_data
+    if data.ndim > 2:  # type: ignore [union-attr]
+AttributeError: 'NoneType' object has no attribute 'ndim'

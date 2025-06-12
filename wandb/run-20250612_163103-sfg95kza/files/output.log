@@ -1,0 +1,16 @@
+810 5
+
+  _     ._   __/__   _ _  _  _ _/_   Recorded: 16:31:03  Samples:  408
+ /_//_/// /_\ / //_// / //_'/ //     Duration: 0.994     CPU time: 0.416
+/   _/                      v5.0.2
+
+Profile at /teamspace/studios/this_studio/main.py:9
+
+[31m0.993[0m [48;5;24m[38;5;15m<module>[0m  [2mmain.py:1[0m
+└─ [31m0.993[0m [48;5;24m[38;5;15msegment_wound_area[0m  [2mtasks/segment_wound_area.py:13[0m
+   ├─ [31m0.978[0m init[0m  [2mwandb/sdk/wandb_init.py:1250[0m
+   │     [80 frames hidden]  [2mwandb, importlib, email, pathlib, tex...[0m
+   │        [33m0.263[0m lock.acquire[0m  [2m<built-in>[0m
+   │        [33m0.200[0m sleep[0m  [2m<built-in>[0m
+   └─ [92m[2m0.015[0m glob[0m  [2mglob.py:13[0m
+         [4 frames hidden]  [2mglob[0m

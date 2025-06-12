@@ -1,9 +1,9 @@
 paths:
   input_path: "/teamspace/studios/this_studio/data/images/0011.png"
-  imput_directory: "/teamspace/studios/this_studio/data/images/"
-  train_directory: "/teamspace/studios/this_studio/data/images/"
-  test_directory: "/teamspace/studios/this_studio/data/images/"
-  validate_directory: "/teamspace/studios/this_studio/data/images/"
+  input_directory: "/teamspace/studios/this_studio/data/subset/"
+  train_directory: "/teamspace/studios/this_studio/data/subset_gt/"
+  test_directory: "/teamspace/studios/this_studio/data/subset_gt/"
+  validate_directory: "/teamspace/studios/this_studio/data/labels/"
   output_directory: "/teamspace/studios/this_studio/results"
   output_path: "out.png"
   area_path: "area.png"
@@ -29,3 +29,5 @@ tasks:
 envs:
   device: "cpu"
 
+wandb:
+  project_id: "wound seg"

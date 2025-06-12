@@ -12,6 +12,7 @@ def get_wound_bbox_vqa(config: dict, image: np.ndarray):
     Output: 
         Bounding Box: List[x1, y1, x2, y2]
     """
+    print("------------------Getting Bounding Box-----------------------")
     image = Image.fromarray(np.uint8(image))
     prompts = config['tasks']['bbox_detection']['prompts']
     threshold = config['tasks']['bbox_detection']['threshold']

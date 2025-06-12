@@ -1,0 +1,15 @@
+{"time":"2025-06-12T16:34:18.040903428Z","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/teamspace/studios/this_studio/wandb/run-20250612_163417-hlgui12e/logs/debug-core.log"}
+{"time":"2025-06-12T16:34:18.200978297Z","level":"INFO","msg":"stream: created new stream","id":"hlgui12e"}
+{"time":"2025-06-12T16:34:18.201063565Z","level":"INFO","msg":"stream: started","id":"hlgui12e"}
+{"time":"2025-06-12T16:34:18.201109539Z","level":"INFO","msg":"writer: Do: started","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:18.20114801Z","level":"INFO","msg":"sender: started","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:18.201225454Z","level":"INFO","msg":"handler: started","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:18.428683575Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-12T16:34:48.786180654Z","level":"INFO","msg":"stream: closing","id":"hlgui12e"}
+{"time":"2025-06-12T16:34:48.786252881Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-12T16:34:48.786772724Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-12T16:34:49.15661973Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-12T16:34:49.233701723Z","level":"INFO","msg":"handler: closed","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:49.233734057Z","level":"INFO","msg":"writer: Close: closed","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:49.233747754Z","level":"INFO","msg":"sender: closed","stream_id":"hlgui12e"}
+{"time":"2025-06-12T16:34:49.233812542Z","level":"INFO","msg":"stream: closed","id":"hlgui12e"}

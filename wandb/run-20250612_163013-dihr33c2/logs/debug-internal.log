@@ -1,0 +1,15 @@
+{"time":"2025-06-12T16:30:13.242690687Z","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/teamspace/studios/this_studio/wandb/run-20250612_163013-dihr33c2/logs/debug-core.log"}
+{"time":"2025-06-12T16:30:13.404924562Z","level":"INFO","msg":"stream: created new stream","id":"dihr33c2"}
+{"time":"2025-06-12T16:30:13.40503054Z","level":"INFO","msg":"stream: started","id":"dihr33c2"}
+{"time":"2025-06-12T16:30:13.405151263Z","level":"INFO","msg":"writer: Do: started","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:13.40524926Z","level":"INFO","msg":"handler: started","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:13.405254539Z","level":"INFO","msg":"sender: started","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:13.570329426Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-12T16:30:14.108330642Z","level":"INFO","msg":"stream: closing","id":"dihr33c2"}
+{"time":"2025-06-12T16:30:14.108370574Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-12T16:30:14.108436696Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-12T16:30:14.471797733Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-12T16:30:14.575196279Z","level":"INFO","msg":"handler: closed","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:14.575237754Z","level":"INFO","msg":"writer: Close: closed","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:14.575294358Z","level":"INFO","msg":"sender: closed","stream_id":"dihr33c2"}
+{"time":"2025-06-12T16:30:14.575438557Z","level":"INFO","msg":"stream: closed","id":"dihr33c2"}

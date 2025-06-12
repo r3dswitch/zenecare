@@ -14,6 +14,7 @@ def get_wound_edge(config: dict, mask: np.ndarray):
     Output: 
         Image with Edges: Numpy Array
     """
+    print("------------------Getting Edge-----------------------")
     image_path = config['paths']['input_path']
     base_image = np.array(Image.open(image_path))
     

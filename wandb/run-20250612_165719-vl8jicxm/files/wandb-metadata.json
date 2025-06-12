@@ -1,0 +1,31 @@
+{
+  "os": "Linux-5.15.0-1084-aws-x86_64-with-glibc2.31",
+  "python": "CPython 3.10.10",
+  "startedAt": "2025-06-12T16:57:19.777690Z",
+  "program": "/teamspace/studios/this_studio/main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "https://github.com/r3dswitch/zenecare.git",
+    "commit": "bf68dec519e4dd993b86cf0f01018a77a5ac9f17"
+  },
+  "email": "iamsammyyo@gmail.com",
+  "root": "/teamspace/studios/this_studio",
+  "host": "ip-10-192-12-27",
+  "executable": "/home/zeus/miniconda3/envs/cloudspace/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 2,
+  "cpu_count_logical": 4,
+  "disk": {
+    "/": {
+      "total": "416055988224",
+      "used": "31966887936"
+    }
+  },
+  "memory": {
+    "total": "16279674880"
+  },
+  "cpu": {
+    "count": 2,
+    "countLogical": 4
+  }
+}
