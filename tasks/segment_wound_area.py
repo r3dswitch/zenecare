@@ -13,11 +13,9 @@ def segment_wound_area(config: dict):
     Output: 
         Masked Wound Area: Numpy Array
     """
+    # wandb.init(project=config.get("wandb_project", "wound_segmentation"), config=config)
     image_path = config['paths']['input_path']
-    image = Image.open(image_path)
-    image = np.array(image)
-    processor, model = get_hf_model(config, "bbox_detection")
-    wound_bbox = get_wound_bbox_vqa(config, processor, model, image)
-    processor, model = get_hf_model(config, "segmentation")
-    mask = get_segmentation_mask_sam(config, image, wound_bbox, processor, model)
+    image = np.array(Image.open(image_path))
+    wound_bbox = get_wound_bbox_vqa(config, image)
+    mask = get_segmentation_mask_sam(config, image, wound_bbox)
     return mask

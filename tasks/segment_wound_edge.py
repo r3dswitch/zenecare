@@ -15,11 +15,8 @@ def segment_wound_edge(config: dict):
         Edges Image: Numpy Array
     """
     image_path = config['paths']['input_path']
-    image = Image.open(image_path)
-    image = np.array(image)
-    processor, model = get_hf_model(config, "bbox_detection")
-    wound_bbox = get_wound_bbox_vqa(config, processor, model, image)
-    processor, model = get_hf_model(config, "segmentation")
-    mask = get_segmentation_mask_sam(config, image, wound_bbox, processor, model)
-    edges = get_wound_edge(config, image, mask)
+    image = np.array(Image.open(image_path))
+    wound_bbox = get_wound_bbox_vqa(config, image)
+    mask = get_segmentation_mask_sam(config, image, wound_bbox)
+    edges = get_wound_edge(config, mask)
     return edges

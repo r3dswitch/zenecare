@@ -2,22 +2,21 @@ import torch
 import numpy as np
 from PIL import Image
 from typing import Tuple
-from transformers import ProcessorMixin, PreTrainedModel
+from helpers import get_hf_model
 
-def get_segmentation_mask_sam(config: dict, image: np.ndarray, bbox: Tuple[int, int, int, int], processor: ProcessorMixin, model: PreTrainedModel):
+def get_segmentation_mask_sam(config: dict, image: np.ndarray, bbox: Tuple[int, int, int, int]):
     """
     Description: Takes an image and a bounding box and finds wound segmentation mask using open vocabulary segmentation
     Input: 
         Config: dict, 
         Image: Numpy Array, 
         Bounding Box: List[x1, y1, x2, y2]
-        Processor: HF Transformers Processor
-        Model: HF Transformers Pretrained Model
     Output: 
         Mask: Numpy Array
     """
     image = Image.fromarray(np.uint8(image))
     device = config['envs']['device']
+    processor, model = get_hf_model(config, "segmentation")
     inputs = processor(
         image,
         input_boxes=[[list(map(float, bbox))]],

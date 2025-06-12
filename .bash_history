@@ -217,3 +217,12 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "Added hausdorff disttance and visualisation"
+git push
+git push
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py

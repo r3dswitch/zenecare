@@ -1,19 +1,22 @@
 import numpy as np
 import cv2
+from PIL import Image
 import matplotlib.pyplot as plt
 from scipy.interpolate import splprep, splev
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-def get_wound_edge(config: dict, base_image: np.ndarray, mask: np.ndarray):
+def get_wound_edge(config: dict, mask: np.ndarray):
     """
     Description: Find wound contours from a segmentation mask, add it to a base image and return the base image with edges
     Input: 
         Config: Dict, 
-        Base Image: Numpy Array, 
         Mask: Numpy Array
     Output: 
         Image with Edges: Numpy Array
     """
+    image_path = config['paths']['input_path']
+    base_image = np.array(Image.open(image_path))
+    
     # Step 1: Find contours
     contours, _ = cv2.findContours(mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     if not contours:

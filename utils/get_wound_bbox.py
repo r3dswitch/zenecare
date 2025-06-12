@@ -1,15 +1,13 @@
 import torch
 import numpy as np
 from PIL import Image
-from transformers import PreTrainedModel, ProcessorMixin
+from helpers import get_hf_model
 
-def get_wound_bbox_vqa(config: dict, processor: ProcessorMixin, model: PreTrainedModel, image: np.ndarray):
+def get_wound_bbox_vqa(config: dict, image: np.ndarray):
     """
     Description: Finds the bounding box for the wound if it exists using VQA model and then returns aabb without padding
     Input: 
-        Config: dict, 
-        Processor: HF Transformers Processor, 
-        Model: HF Transformers Model, 
+        Config: dict,
         Image: Numpy Array
     Output: 
         Bounding Box: List[x1, y1, x2, y2]
@@ -17,6 +15,7 @@ def get_wound_bbox_vqa(config: dict, processor: ProcessorMixin, model: PreTraine
     image = Image.fromarray(np.uint8(image))
     prompts = config['tasks']['bbox_detection']['prompts']
     threshold = config['tasks']['bbox_detection']['threshold']
+    processor, model = get_hf_model(config, "bbox_detection")
     inputs = processor(text=prompts, images=image, return_tensors="pt")
     
     with torch.no_grad():
