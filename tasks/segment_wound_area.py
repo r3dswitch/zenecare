@@ -2,8 +2,8 @@ from PIL import Image
 import numpy as np
 from helpers import get_hf_model, save_image
 
-from utils.get_wound_bbox import get_wound_bbox
-from utils.get_segmentation_mask import get_segmentation_mask
+from utils.get_wound_bbox import get_wound_bbox_vqa
+from utils.get_segmentation_mask import get_segmentation_mask_sam
 
 def segment_wound_area(config: dict):
     """
@@ -17,7 +17,7 @@ def segment_wound_area(config: dict):
     image = Image.open(image_path)
     image = np.array(image)
     processor, model = get_hf_model(config, "bbox_detection")
-    wound_bbox = get_wound_bbox(config, processor, model, image)
+    wound_bbox = get_wound_bbox_vqa(config, processor, model, image)
     processor, model = get_hf_model(config, "segmentation")
-    mask = get_segmentation_mask(config, wound_bbox)
+    mask = get_segmentation_mask_sam(config, wound_bbox)
     return mask

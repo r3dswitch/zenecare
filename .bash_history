@@ -175,3 +175,13 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "refactored to make it more versatile"
+git push
+python main.py
+python main.py
+python main.py
+ubuntu-drivers
+nvidia-smi
+uv pip install pyinstrument
+python main.py
