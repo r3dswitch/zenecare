@@ -1,4 +1,4 @@
-from helpers import load_config, get_hf_model
+from helpers import get_hf_model
 import torch
 from PIL import Image
 

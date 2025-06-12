@@ -1,10 +1,6 @@
-from typing import List
-from PIL import Image
 import torch
 
-def detect_wound_bbox(config: dict, processor, model, image_path: str):
-    image = Image.open(image_path).convert("RGB")
-
+def detect_wound_bbox(config: dict, processor, model, image):
     inputs = processor(text=config['prompts'], images=image, return_tensors="pt")
     with torch.no_grad():
         outputs = model(**inputs)

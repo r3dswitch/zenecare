@@ -119,3 +119,30 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "refactored to improve extension"
+git push
+python utils/get_wound_spline.py 
+ssh -Y username@remote_host
+ssh -Y redswitch@ssh.lightning.ai
+whoami
+ssh -Y r3dswitch@ssh.lightning.ai
+ssh -Y r3dswitch@ssh.lightning.ai
+ssh -Y r3dswitch@34.133.207.199
+xclock
+ssh -Y r3dswitch@ssh.lightning.ai
+whoami
+ls ~/.ssh/*.pub
+python utils/get_wound_spline.py 
+python utils/get_wound_spline.py 
+python utils/get_wound_spline.py 
+python utils/get_wound_spline.py 
+python utils/get_wound_spline.py 
+python utils/detect_wound_bbox.py 
+python utils/get_segmentation_mask.py 
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py

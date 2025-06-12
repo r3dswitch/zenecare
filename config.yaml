@@ -5,7 +5,9 @@ paths:
   test_directory: "/teamspace/studios/this_studio/data/images/"
   validate_directory: "/teamspace/studios/this_studio/data/images/"
   output_directory: "/teamspace/studios/this_studio/results"
-  output_path: "out.png" 
+  output_path: "out.png"
+  area_path: "area.png"
+  edge_path: "edge.png" 
 
 bbox_detection:
   model_name: "Owl ViT 2"
