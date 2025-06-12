@@ -197,3 +197,23 @@ python main.py
 python main.py
 python main.py
 python main.py
+git add .
+git commit -m "grounding dino test"
+git push
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py
+python main.py

@@ -19,5 +19,5 @@ def segment_wound_area(config: dict):
     processor, model = get_hf_model(config, "bbox_detection")
     wound_bbox = get_wound_bbox_vqa(config, processor, model, image)
     processor, model = get_hf_model(config, "segmentation")
-    mask = get_segmentation_mask_sam(config, wound_bbox)
+    mask = get_segmentation_mask_sam(config, image, wound_bbox, processor, model)
     return mask

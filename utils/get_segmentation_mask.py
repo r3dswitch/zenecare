@@ -17,12 +17,12 @@ def get_segmentation_mask_sam(config: dict, image: np.ndarray, bbox: Tuple[int, 
         Mask: Numpy Array
     """
     image = Image.fromarray(np.uint8(image))
-    
+    device = config['envs']['device']
     inputs = processor(
         image,
         input_boxes=[[list(map(float, bbox))]],
         return_tensors="pt"
-    ).to(config['device'])
+    ).to(device)
     
     with torch.no_grad():
         outputs = model(**inputs)

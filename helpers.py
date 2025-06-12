@@ -12,12 +12,15 @@ def load_config(path: str) -> dict:
     return config
 
 def get_hf_model(config: dict, task_name: str):
+    processor_id = config['tasks'][task_name]['processor']
+    model_id = config['tasks'][task_name]['model']
+    
     if task_name == "bbox_detection":
-        processor = Owlv2Processor.from_pretrained(config[task_name]['processor'])
-        model = Owlv2ForObjectDetection.from_pretrained(config[task_name]['model'])   
+        processor = Owlv2Processor.from_pretrained(processor_id)
+        model = Owlv2ForObjectDetection.from_pretrained(model_id)   
     elif task_name == "segmentation":
-        processor = SamProcessor.from_pretrained(config[task_name]['processor'])
-        model = SamModel.from_pretrained(config[task_name]['model']).to(torch.device(config['device']))
+        processor = SamProcessor.from_pretrained(processor_id)
+        model = SamModel.from_pretrained(model_id)
     else:
         return None
     return processor, model
@@ -53,6 +56,20 @@ def visualise_edges(config: dict, image: np.ndarray, edges: np.ndarray):
         plt.imshow(image)
         plt.imshow(edges)
         plt.savefig(config['paths']['edge_path'], bbox_inches='tight', pad_inches=0)
+
+def compare_vis(config: dict, mask1: np.ndarray, mask2: np.ndarray):
+    if mask1.shape != mask2.shape:
+        raise ValueError("Both masks must have the same shape")
+
+    plt.figure(figsize=(8, 8))
+    plt.imshow(np.zeros_like(mask1), cmap='gray')  # background
+
+    plt.imshow(mask1, cmap='Reds', alpha=0.5, interpolation='none')   # mask1 in red
+    plt.imshow(mask2, cmap='Blues', alpha=0.5, interpolation='none')  # mask2 in blue
+
+    plt.axis('off')
+    plt.show()
+    plt.savefig(config['paths']['compare_path'], bbox_inches='tight', pad_inches=0)
 
 def save_image(image: np.ndarray, save_path: str):
     image = Image.fromarray(image)

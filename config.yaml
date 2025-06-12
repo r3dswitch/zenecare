@@ -9,19 +9,23 @@ paths:
   area_path: "area.png"
   edge_path: "edge.png" 
   bbox_path: "bbox.png"
+  compare_path: "compare.png"
 
-bbox_detection:
-  model_name: "Owl ViT 2"
-  processor: "google/owlv2-base-patch16-ensemble"
-  model: "google/owlv2-base-patch16-ensemble"
+tasks:
+  bbox_detection:
+    model_name: "Owl ViT 2"
+    processor: "google/owlv2-base-patch16-ensemble"
+    model: "google/owlv2-base-patch16-ensemble"
+    prompts: ["Find The Wound in the Image"]
+    threshold: 0.2
 
-segmentation:
-  model_name: "Sam 2"
-  processor: "facebook/sam-vit-base"
-  model: "facebook/sam-vit-base"
+  segmentation:
+    model_name: "Sam 2"
+    processor: "facebook/sam-vit-base"
+    model: "facebook/sam-vit-base"
+    prompts: ["Find The Wound in the Image"]
+    threshold: 0.2
 
-device: "cpu"
+envs:
+  device: "cpu"
 
-prompts: ["Find The Wound in the Image"]
-
-threshold: 0.2

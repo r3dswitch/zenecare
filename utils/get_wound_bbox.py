@@ -15,13 +15,15 @@ def get_wound_bbox_vqa(config: dict, processor: ProcessorMixin, model: PreTraine
         Bounding Box: List[x1, y1, x2, y2]
     """
     image = Image.fromarray(np.uint8(image))
-    inputs = processor(text=config['prompts'], images=image, return_tensors="pt")
+    prompts = config['tasks']['bbox_detection']['prompts']
+    threshold = config['tasks']['bbox_detection']['threshold']
+    inputs = processor(text=prompts, images=image, return_tensors="pt")
     
     with torch.no_grad():
         outputs = model(**inputs)
 
     results = processor.post_process_grounded_object_detection(
-        outputs=outputs, threshold=config['threshold'], target_sizes=[image.size]
+        outputs=outputs, threshold=threshold, target_sizes=[image.size]
     )[0]
 
     for box in results["boxes"]:
