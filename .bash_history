@@ -185,3 +185,15 @@ ubuntu-drivers
 nvidia-smi
 uv pip install pyinstrument
 python main.py
+git add .
+git commit -m "added telemetry"
+git push
+git push
+python main.py
+uv pip install timm
+python main.py
+clear
+python main.py
+python main.py
+python main.py
+python main.py

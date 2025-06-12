@@ -14,7 +14,7 @@ def load_config(path: str) -> dict:
 def get_hf_model(config: dict, task_name: str):
     if task_name == "bbox_detection":
         processor = Owlv2Processor.from_pretrained(config[task_name]['processor'])
-        model = Owlv2ForObjectDetection.from_pretrained(config[task_name]['model'])
+        model = Owlv2ForObjectDetection.from_pretrained(config[task_name]['model'])   
     elif task_name == "segmentation":
         processor = SamProcessor.from_pretrained(config[task_name]['processor'])
         model = SamModel.from_pretrained(config[task_name]['model']).to(torch.device(config['device']))
