@@ -4,16 +4,16 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import splprep, splev
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
-def get_wound_spline(config, base_image, mask):
+def get_wound_edge(config: dict, base_image: np.ndarray, mask: np.ndarray):
     """
-    Generates a spline from a binary mask and saves it superimposed on an optional base image.
-
-    Parameters:
-    - mask: Binary mask (2D numpy array).
-    - output_file: File path to save the output image (e.g., "spline.png").
-    - base_image: Optional RGB or grayscale image (numpy array) to draw the spline on.
+    Description: Find wound contours from a segmentation mask, add it to a base image and return the base image with edges
+    Input: 
+        Config: Dict, 
+        Base Image: Numpy Array, 
+        Mask: Numpy Array
+    Output: 
+        Image with Edges: Numpy Array
     """
-    base_image = np.array(base_image)
     # Step 1: Find contours
     contours, _ = cv2.findContours(mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     if not contours:
@@ -37,9 +37,6 @@ def get_wound_spline(config, base_image, mask):
             background = cv2.cvtColor(base_image, cv2.COLOR_GRAY2RGB)
         else:
             background = base_image.copy()
-    else:
-        # Default to grayscale mask background
-        background = cv2.cvtColor((mask * 255).astype(np.uint8), cv2.COLOR_GRAY2RGB)
 
     # Step 5: Plot and save
     plt.figure(figsize=(6, 6))
@@ -47,7 +44,6 @@ def get_wound_spline(config, base_image, mask):
     plt.plot(x_spline, y_spline, 'r-', linewidth=2)
     plt.axis('off')
     plt.tight_layout()
-    plt.savefig(config['paths']['edge_path'], bbox_inches='tight', pad_inches=0)
 
     fig, ax = plt.subplots(figsize=(6, 6), dpi=100)
     canvas = FigureCanvas(fig)

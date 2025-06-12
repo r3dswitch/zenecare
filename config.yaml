@@ -8,6 +8,7 @@ paths:
   output_path: "out.png"
   area_path: "area.png"
   edge_path: "edge.png" 
+  bbox_path: "bbox.png"
 
 bbox_detection:
   model_name: "Owl ViT 2"
