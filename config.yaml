@@ -27,7 +27,7 @@ tasks:
     threshold: 0.2
 
 envs:
-  device: "cpu"
+  device: "cuda"
 
 wandb:
   project_id: "wound seg"

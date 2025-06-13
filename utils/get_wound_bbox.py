@@ -16,8 +16,9 @@ def get_wound_bbox_vqa(config: dict, image: np.ndarray):
     image = Image.fromarray(np.uint8(image))
     prompts = config['tasks']['bbox_detection']['prompts']
     threshold = config['tasks']['bbox_detection']['threshold']
+    device = config['envs']['device']
     processor, model = get_hf_model(config, "bbox_detection")
-    inputs = processor(text=prompts, images=image, return_tensors="pt")
+    inputs = processor(text=prompts, images=image, return_tensors="pt").to(device)
     
     with torch.no_grad():
         outputs = model(**inputs)

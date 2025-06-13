@@ -17,13 +17,14 @@ def get_hf_model(config: dict, task_name: str):
     print(f"------------------Getting Model for: {task_name}-----------------------")
     processor_id = config['tasks'][task_name]['processor']
     model_id = config['tasks'][task_name]['model']
+    device = config['envs']['device']
     
     if task_name == "bbox_detection":
         processor = Owlv2Processor.from_pretrained(processor_id)
-        model = Owlv2ForObjectDetection.from_pretrained(model_id)   
+        model = Owlv2ForObjectDetection.from_pretrained(model_id).to(device)   
     elif task_name == "segmentation":
         processor = SamProcessor.from_pretrained(processor_id)
-        model = SamModel.from_pretrained(model_id)
+        model = SamModel.from_pretrained(model_id).to(device)
     else:
         return None
     return processor, model
